@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Heart Disease Prediction</h2>
+        <form action="/predict" method="post">
+            <div class="input-group">
+                <label>Age:</label>
+                <input type="number" name="age" required>
+            </div>
+            <div class="input-group">
+                <label>Sex:</label>
+                <input type="number" name="sex" required>
+            </div>
+            <div class="input-group">
+                <label>Chest Pain Type:</label>
+                <input type="number" name="cp" required>
+            </div>
+            <div class="input-group">
+                <label>Resting Blood Pressure:</label>
+                <input type="number" name="trestbps" required>
+            </div>
+            <div class="input-group">
+                <label>Serum Cholesterol:</label>
+                <input type="number" name="chol" required>
+            </div>
+            <div class="input-group">
+                <label>Fasting Blood Sugar:</label>
+                <input type="number" name="fbs" required>
+            </div>
+            <div class="input-group">
+                <label>Resting ECG:</label>
+                <input type="number" name="restecg" required>
+            </div>
+            <div class="input-group">
+                <label>Max Heart Rate Achieved:</label>
+                <input type="number" name="thalach" required>
+            </div>
+            <div class="input-group">
+                <label>Exercise Induced Angina:</label>
+                <input type="number" name="exang" required>
+            </div>
+            <div class="input-group">
+                <label>ST Depression:</label>
+                <input type="number" name="oldpeak" required>
+            </div>
+            <div class="input-group">
+                <label>Slope of Peak Exercise ST Segment:</label>
+                <input type="number" name="slope" required>
+            </div>
+            <div class="input-group">
+                <label>Number of Major Vessels:</label>
+                <input type="number" name="ca" required>
+            </div>
+            <div class="input-group">
+                <label>Thal:</label>
+                <input type="number" name="thal" required>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction_text %}
+            <h3>{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
